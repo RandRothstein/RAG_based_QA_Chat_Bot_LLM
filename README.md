@@ -5,7 +5,7 @@ This project implements a flexible Question-Answering (Q&A) system using the Ret
 The system uses Sentence Transformers for embedding, FAISS for efficient similarity search (retrieval), and a Hugging Face Transformers pipeline for generating answers based on the retrieved context.
 
 ### 📽 Demo
-![Demo](recordings/Document Q&A with RAG and 1 more page - Personal - Microsoft​ Edge 2025-07-06 17-26-01)
+![Demo](recordings/DemoSample.gif)
 
 
 ## ✨ Features
