@@ -2,7 +2,7 @@
 
 This project implements a flexible Question-Answering (Q&A) system using the Retrieval Augmented Generation (RAG) architecture. It leverages Streamlit for an interactive user interface, allowing users to upload their own `.txt`, `.pdf`, and `.csv` documents, build a knowledge base from them, and then ask questions.
 
-The system uses Sentence Transformers for embedding, FAISS for efficient similarity search (retrieval), and a Hugging Face Transformers pipeline for generating answers based on the retrieved context.
+The system uses Sentence Transformers for embedding, FAISS for efficient similarity search (retrieval), and open source google/flan-t5-base model for generating answers based on the retrieved context with LOra fine tunning with huggingface dataset and evalueation useing ROUGE evaluation metrix.
 
 ### 📽 Demo
 ![Demo](recordings/Demo.gif)
