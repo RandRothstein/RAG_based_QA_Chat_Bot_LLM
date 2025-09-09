@@ -11,16 +11,15 @@ import faiss
 from transformers import pipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, GenerationConfig, TrainingArguments, Trainer
 # --- Configuration ---
 DOCUMENTS_DIR = "documents"
 FAISS_INDEX_PATH = "document_qa_index.faiss"
 DOC_CHUNKS_PATH = "document_chunks.json"
 
 # --- Model Loading ---
-EMBEDDING_MODEL = SentenceTransformer('all-MiniLM-L6-v2')
-QA_PIPELINE = pipeline("question-answering", model="deepset/roberta-base-squad2")
-
+QA_PIPELINE = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base",torch_dtype=torch.bfloat16)
+EMBEDDING_MODEL = AutoTokenizer.from_pretrained("google/flan-t5-base")
 # --- Document Processing Functions ---
 
 def process_file_content(file_name: str, file_content_bytes: bytes) -> Union[str, None]:
